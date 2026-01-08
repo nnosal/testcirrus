@@ -18,9 +18,6 @@ onPremiseVM_task:
     always:
 onPremiseHost_task:
   name: Test sur Mac (on-premise host)
-  persistent_worker:
-    labels:
-      os: darwin
-      arch: arm64
+  persistent_worker: {}
   script:
    - uname -a && sleep 3 # will fail if allowed-isolations: { tart: {} }
