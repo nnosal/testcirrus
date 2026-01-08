@@ -1,4 +1,4 @@
-task:
+onPremiseVM_task:
   name: Test sur Mac (on-premise VM)
   persistent_worker:
     labels:
@@ -11,7 +11,16 @@ task:
    - uname -a
    - sleep 3
    - brew install neofetch
-   - neofetch > neofetch.txt
+   - neofetch
+   - neofetch --stdout --color_blocks off > neofetch.txt
   result_artifacts: # cirrus run --artifacts-dir ./artifacts
     path: "*.txt"
     always:
+onPremiseHost_task:
+  name: Test sur Mac (on-premise host)
+  persistent_worker:
+    labels:
+      os: darwin
+      arch: arm64
+  script:
+   - uname -a && sleep 3 # will fail if allowed-isolations: { tart: {} }
