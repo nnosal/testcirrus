@@ -1,0 +1,4 @@
+task:
+  name: Test sur Mac
+  persistent_worker: {}
+  script: uname -a && sleep 30
