@@ -1,5 +1,5 @@
 task:
-  name: Test sur Mac
+  name: Test sur Mac (on-premise VM)
   persistent_worker:
     labels:
       os: darwin
@@ -7,4 +7,11 @@ task:
     isolation:
       tart:
         image: ghcr.io/cirruslabs/macos-sequoia-base@sha256:dd0247d914bd6ea3b8cb2622c7937763c17cadd981ac50fd8ddef8d242b89374
-  script: uname -a && sleep 30
+  script:
+   - uname -a
+   - sleep 3
+   - brew install neofetch
+   - neofetch > neofetch.txt
+  result_artifacts: # cirrus run --artifacts-dir ./artifacts
+    path: "*.txt"
+    always:
