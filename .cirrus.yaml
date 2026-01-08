@@ -1,4 +1,9 @@
 task:
   name: Test sur Mac
-  persistent_worker: {}
+  persistent_worker:
+    labels:
+      os: darwin
+      arch: arm64
   script: uname -a && sleep 30
+  tart:
+    image: ghcr.io/cirruslabs/macos-sonoma-base:latest
