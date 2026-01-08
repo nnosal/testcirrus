@@ -4,6 +4,7 @@ task:
     labels:
       os: darwin
       arch: arm64
+    isolation:
+      tart:
+        image: ghcr.io/cirruslabs/macos-sonoma-base:latest
   script: uname -a && sleep 30
-  tart:
-    image: ghcr.io/cirruslabs/macos-sonoma-base:latest
