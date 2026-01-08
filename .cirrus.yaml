@@ -6,5 +6,5 @@ task:
       arch: arm64
     isolation:
       tart:
-        image: ghcr.io/cirruslabs/macos-sonoma-base:latest
+        image: ghcr.io/cirruslabs/macos-sequoia-base@sha256:dd0247d914bd6ea3b8cb2622c7937763c17cadd981ac50fd8ddef8d242b89374
   script: uname -a && sleep 30
